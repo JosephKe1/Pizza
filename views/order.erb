@@ -1,0 +1,86 @@
+<form action="/order" method="post" class="form-inline">
+  <div class="form-group">
+    <p style="font-family: sans-serif; font-size: 18px;">Order Your Pizza Here:</p>
+  </div>
+  <h3>Customer Name</h3>
+  <div class="form-group">
+    <label for="first-name">First Name</label>
+    <input type="text" id="first-name" name="first_name" class="form-control" placeholder="e.g. Joseph" required value="<%= @first_name%>">
+    <label for="last-name">Last Name</label>
+    <input type="text" id="last-name" name="last_name" class="form-control" placeholder="e.g. Ke" required value="<%= @last_name %>">
+  </div>
+    <h3>Address</h3>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" id="street" name="street" class="form-control" required placeholder="#### Street Name St" value="<%= @street%>">
+      <label for="apt">Apt.</label>
+      <input type="text" id="apt" name="apt" class="form-control" required placeholder="711" value="<%= @apt %>">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input name="city" id="city" type="text" required placeholder="Vancouver" class="form-control" value="<%= @city %>">
+      <label for="province">Province</label>
+      <select name="province" id="province" required class="form-control" value="<%= @province %>">
+        <option>AB</option>
+        <option selected>BC</option>
+        <option>MB</option>
+        <option>NB</option>
+        <option>NL</option>
+        <option>NS</option>
+        <option>NT</option>
+        <option>NU</option>
+        <option>ON</option>
+        <option>PE</option>
+        <option>QC</option>
+        <option>SK</option>
+        <option>YT</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="postal">Postal Code</label>
+      <input name="postal" id="postal" type="text" required placeholder="V1V 1V1" class="form-control" value="<%= @postal %>">
+    </div>
+    <h3>Phone Number</h3>
+    <div class="form-group">
+      <input type="text" id="phone" name="phone" required class="form-control" placeholder="604-123-4567" value="<%= @phone %>">
+    </div>
+    <h3>Pizza Size</h3>
+    <div class="form-group">
+      <input type="radio" id="small" name="size" class="form-control" value=15>
+      <label for="small">Small ($15)</label>
+      <input type="radio" id="medium" name="size" class="form-control" value=20>
+      <label for="medium">Medium ($20)</label>
+      <input type="radio" id="large" name="size" class="form-control" checked value=25>
+      <label for="large">Large ($25)</label>
+      <input type="radio" id="x-large" name="size" class="form-control" value=30>
+      <label for="x-large">X-Large ($30)</label>
+    </div>
+    <h3>Pizza</h3>
+    <div class="form-group">
+      <select name="pizza" id="pizza" class="form-control" value="<%= @pizza %>">
+        <option>Pepperoni</option>
+        <option>Supreme</option>
+        <option>Cheese</option>
+        <option>Hawaiian</option>
+        <option>BBQ Chicken</option>
+      </select>
+    </div>
+    <h3>Quantity</h3>
+    <div class="form-group">
+      <input type="radio" id="quantity" name="quantity" class="form-control" value=1>
+      <label>1</label>
+      <input type="radio" id="quantity" name="quantity" class="form-control" value=2>
+      <label>2</label>
+      <input type="radio" id="quantity" name="quantity" class="form-control" value=3>
+      <label>3</label>
+      <input type="radio" id="quantity" name="quantity" class="form-control" value=4>
+      <label>4</label>
+      <input type="radio" id="quantity" name="quantity" class="form-control" value=5>
+      <label>5</label>
+    </div>
+      <% if @conversion %>
+      <p><%= @conversion.round(2) %></p>
+      <% end %>
+    <hr>
+    <input type="submit" class="btn btn-primary" name="action" value="Order">
+</form>

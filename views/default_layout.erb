@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <style>
+      body {
+        background: white;
+        text-align: center;
+        height: 100%;
+      }
+
+      .bg {
+        background-image: url("https://biz.dominos.com/image/journal/article?img_id=6690371&t=1450369757540");
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      hr {
+        border-color: #DE2939;
+        border-width: 3px;
+        max-width: 150px;
+      }
+
+      #footer {
+        height: 60px;
+        background-color: #007BAD;
+        padding-top: 12.5px;
+        margin-top: 10px;
+        bottom: 0px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav id="my-navbar" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a href="/order" class="navbar-left"><img style="height: 40px; margin-top: 5px; padding-right: 10px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/2000px-Dominos_pizza_logo.svg.png"></a>
+        <a href="/order" class="navbar-left navbar-brand">Domino's Pizza</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/about">About</a></li>
+          <li><a href="/order">Order Online</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron bg">
+      <div class="container-fluid text-center">
+        <h1 id="company-name" style="color:white; margin-top: 100px;">DOMINO'S PIZZA</h1>
+        <hr>
+        <p style="color:white; font-size: 20px;"><strong>Pizza Delivered Fresh In Under 20 Minutes</strong></p>
+      </div>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <div class="form-group">
+        <form class="form-inline">
+          <label style="color:white;"for="newsletter">Subscribe to our newsletter:</label>
+          <input type="email" name="newsletter" id="newsletter" class="form-control" placeholder="e.g. john@doe.com">
+          <input style="background-color:#DE2939;"type="submit" name="newsletter" class="btn btn-primary" value="Subscribe">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
