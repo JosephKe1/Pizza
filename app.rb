@@ -12,7 +12,6 @@ class Contact
   property :last_name, String
   property :email, String
   property :comments, Text
-
 end
 
 DataMapper.auto_upgrade!
